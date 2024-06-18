@@ -1,6 +1,7 @@
 var result = 0;
 var acumulator = 0;
 let displayn = document.getElementById("displaynum");
+let lastnum = 0;
 
 function calc(initn, secondn, operator) {
     
@@ -22,9 +23,18 @@ function calc(initn, secondn, operator) {
 }
 
 function getInput(num) {
+    
+    let acumulator = 0;
     let displayn = document.getElementById("displaynum");
-    displayn.innerHTML = num;
-    console.log(num);
+    
+    if (lastnum == 0) {
+        acumulator = String(num);
+    } else {
+        acumulator = lastnum + String(num);
+    }
+    lastnum = acumulator;
+    console.log(acumulator);
+    displayn.innerHTML = acumulator;
 }
 
 
