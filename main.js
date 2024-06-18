@@ -1,7 +1,8 @@
 var result = 0;
 var acumulator = 0;
 let displayn = document.getElementById("displaynum");
-let lastnum = 0;
+let actualnum = 0;
+let pastnum = 0;
 
 function calc(initn, secondn, operator) {
     
@@ -27,12 +28,15 @@ function getInput(num) {
     let acumulator = 0;
     let displayn = document.getElementById("displaynum");
     
-    if (lastnum == 0) {
+    if (num == "del") {
+        acumulator = actualnum.substring(0, actualnum.length - 1); 
+    } else if (actualnum == 0) {
         acumulator = String(num);
     } else {
-        acumulator = lastnum + String(num);
+        acumulator = String(actualnum) + String(num);
     }
-    lastnum = acumulator;
+    actualnum = acumulator;
+
     console.log(acumulator);
     displayn.innerHTML = acumulator;
 }
