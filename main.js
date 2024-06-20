@@ -71,7 +71,7 @@ function getInput(num) {
         displaytext = 0;
         actualnum = lastn;
 
-        displayn.innerHTML = lastn;
+        displayn.innerHTML = parseFloat(floatShrink(lastn));
     } 
     
     //subtraction
@@ -82,7 +82,7 @@ function getInput(num) {
         if (count > 1) {
             lastn = toPos(lastn);
         }
-        displayn.innerHTML = lastn;
+        displayn.innerHTML = parseFloat(floatShrink(lastn));
         console.log("lastn", lastn);
     } 
     
@@ -103,7 +103,7 @@ function getInput(num) {
         console.log('mult', multiplier);
         console.log('mult lastn', lastn);
 
-        displayn.innerHTML = lastn;
+        displayn.innerHTML = parseFloat(floatShrink(lastn));
     }
     
     //division
@@ -122,9 +122,7 @@ function getInput(num) {
         console.log('mult', multiplier);
         console.log('mult lastn', lastn);
         if (count < 2) {
-            displayn.innerHTML = multiplier;
-        } else if(parseFloat(floatShrink(lastn)) === Infinity) {
-            displayn.innerHTML = '🤨';
+            displayn.innerHTML = multiplier; 
         } else {
             displayn.innerHTML = parseFloat(floatShrink(lastn));
         }
