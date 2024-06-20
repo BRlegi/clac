@@ -83,7 +83,7 @@ button {
 .operatorbox {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    justify-content: space-between;
 }
 .operatorbox button {
     font-size: 21.5px;
