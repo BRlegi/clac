@@ -86,12 +86,16 @@ button {
     gap: 4px;
 }
 .operatorbox button {
-    font-size: 30px;
+    font-size: 21.5px;
 }
 #enter {
-    font-size: 40px;
+    font-size: 41px;
     background-color: rgb(172, 36, 214);
     border-color: rgb(116, 96, 189);
+}
+#clear {
+    background-color: rgb(228, 41, 41);
+    border-color: rgb(163, 16, 16);
 }
 
 .numbox {

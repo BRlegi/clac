@@ -50,6 +50,10 @@ function toPos(value) {
     value = value * -1;
     return value;
 }
+function floatShrink(value) {
+    value = Math.floor(value * 100) / 100;
+    return value.toFixed(2);
+}
 
 function getInput(num) {
     
@@ -103,7 +107,7 @@ function getInput(num) {
     }
     
     //division
-    else if (num == 'divi') {
+    else if (num == 'divi' || num == 'enter' && operation == 'divi') {
         operation = 'divi';
         count = count + 1;
 
@@ -119,8 +123,10 @@ function getInput(num) {
         console.log('mult lastn', lastn);
         if (count < 2) {
             displayn.innerHTML = multiplier;
+        } else if(parseFloat(floatShrink(lastn)) === Infinity) {
+            displayn.innerHTML = '🤨';
         } else {
-            displayn.innerHTML = lastn;
+            displayn.innerHTML = parseFloat(floatShrink(lastn));
         }
     }
    
